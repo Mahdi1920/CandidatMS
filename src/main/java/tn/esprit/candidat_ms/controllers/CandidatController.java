@@ -1,6 +1,6 @@
 package tn.esprit.candidat_ms.controllers;
 
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.candidat_ms.entities.Candidat;
 import tn.esprit.candidat_ms.services.ICandidatService;
@@ -9,28 +9,33 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@NoArgsConstructor
+//@AllArgsConstructor
 @RequestMapping("/api/Candidat")
 public class CandidatController {
-	ICandidatService candidatService;
+	private ICandidatService candidatService;
+	public CandidatController(ICandidatService candidatService) {
+		this.candidatService = candidatService;
+
+	}
+
 	@PostMapping("/addCandidat")
 	public Candidat addCandidat(@RequestBody Candidat candidat) {
-		return candidatService.addCandidat(candidat);
+		return candidatService.add(candidat);
 	}
 	@PutMapping("/putCandidat")
 	public Candidat updateCandidat(@RequestBody Candidat candidat) {
-		return candidatService.updateCandidat(candidat);
+		return candidatService.update(candidat);
 	}
 	@GetMapping("/getCandidatById/{idCandidat}")
-	public Optional<Candidat> retrieveCandidat(@PathVariable String idCandidat) {
-		return candidatService.retrieveCandidat(idCandidat);
+	public Candidat retrieveCandidat(@PathVariable long idCandidat) {
+		return candidatService.retrieveById(idCandidat);
 	}
 	@GetMapping("/GetCandidats")
 	public List<Candidat> retrieveAllCandidats() {
-		return candidatService.retrieveAllCandidats();
+		return  candidatService.retrieveAll();
 	}
 	@DeleteMapping("/deleteCandidat/{idCandidat}")
-	public void removeCandidat(@PathVariable String idCandidat) {
-		candidatService.removeCandidat(idCandidat);
+	public void removeCandidat(@PathVariable long idCandidat) {
+		candidatService.delete(idCandidat);
 	}
 }

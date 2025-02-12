@@ -1,38 +1,68 @@
 package tn.esprit.candidat_ms.services;
 
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.candidat_ms.entities.Candidat;
 import tn.esprit.candidat_ms.repositories.CandidatRepository;
 
 import java.util.List;
-import java.util.Optional;
-@NoArgsConstructor
+
 @Service
+//@AllArgsConstructor
 public class CandidatServiceImpl implements ICandidatService{
-	CandidatRepository candidatRepository;
+	private CandidatRepository candidatRepository;
+
+	public CandidatServiceImpl(CandidatRepository candidatRepository) {
+		this.candidatRepository = candidatRepository;
+	}
+
 	@Override
-	public Candidat addCandidat(Candidat candidat) {
+	public Candidat add(Candidat candidat) {
 		return candidatRepository.save(candidat);
 	}
 
 	@Override
-	public Candidat updateCandidat(Candidat candidat) {
+	public Candidat update(Candidat candidat) {
 		return candidatRepository.save(candidat);
 	}
 
 	@Override
-	public Optional<Candidat> retrieveCandidat(String idCandidat) {
-		return candidatRepository.findById(idCandidat);
+	public Candidat retrieveById(Long idCandidat) {
+		return candidatRepository.findById(idCandidat).orElse(null);
 	}
 
 	@Override
-	public List<Candidat> retrieveAllCandidats() {
+	public List<Candidat> retrieveAll() {
 		return candidatRepository.findAll();
 	}
 
 	@Override
-	public void removeCandidat(String idCandidat) {
+	public void delete(Long idCandidat) {
 		candidatRepository.deleteById(idCandidat);
 	}
+
+//	@Override
+//	public Candidat addCandidat(Candidat candidat) {
+//		return candidatRepository.save(candidat);
+//	}
+//
+//	@Override
+//	public Candidat updateCandidat(Candidat candidat) {
+//		return candidatRepository.save(candidat);
+//	}
+//
+//	@Override
+//	public Candidat retrieveCandidat(long  idCandidat) {
+//		return candidatRepository.findById(idCandidat).orElse(null);
+//	}
+//
+//	@Override
+//	public List<Candidat> retrieveAllCandidats() {
+//		return candidatRepository.findAll();
+//	}
+//
+//	@Override
+//	public void removeCandidat(long idCandidat) {
+//		candidatRepository.deleteById(idCandidat);
+//	}
 }
