@@ -4,19 +4,13 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.candidat_ms.entities.Candidat;
 import tn.esprit.candidat_ms.services.ICandidatService;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-//@AllArgsConstructor
+@AllArgsConstructor
 @RequestMapping("/api/Candidat")
 public class CandidatController {
 	private ICandidatService candidatService;
-	public CandidatController(ICandidatService candidatService) {
-		this.candidatService = candidatService;
-
-	}
 
 	@PostMapping("/addCandidat")
 	public Candidat addCandidat(@RequestBody Candidat candidat) {
