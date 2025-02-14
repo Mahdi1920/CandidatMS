@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import tn.starter.shared.entities.BaseEntity;
+//import tn.starter.mysqlShared.entities.BaseEntity;
 
 @Entity
 @Getter
@@ -11,7 +12,7 @@ import tn.starter.shared.entities.BaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Candidat extends BaseEntity  {
+public class Candidat extends BaseEntity {
 	String nom;
 	String prenom;
 	Integer nbQuiz;

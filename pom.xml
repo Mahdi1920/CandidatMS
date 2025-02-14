@@ -42,6 +42,11 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>tn.starter</groupId>-->
+<!--            <artifactId>MysqlShared</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>tn.starter</groupId>
             <artifactId>shared</artifactId>
@@ -62,6 +67,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
