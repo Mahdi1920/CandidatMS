@@ -15,4 +15,5 @@ public class Candidat extends BaseEntity {
 	String nom;
 	String prenom;
 	Integer nbQuiz;
+	String idQuiz;
 }
