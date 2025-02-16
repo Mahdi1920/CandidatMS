@@ -12,6 +12,6 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class CandidatServiceImpl extends IGenericServiceImpl<CandidatDTO,Candidat> implements ICandidatService{
-	private final CandidatMapper candidatMapper;  // Ensure injection
+	//private final CandidatMapper candidatMapper;  // Ensure injection
 
 }
