@@ -3,8 +3,7 @@ package tn.esprit.candidat_ms.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import tn.starter.shared.entities.BaseEntity;
-//import tn.starter.mysqlShared.entities.BaseEntity;
+import tn.starter.mysqlShared.entities.BaseEntity;
 
 @Entity
 @Getter
