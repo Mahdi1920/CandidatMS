@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import tn.starter.mysqlShared.dto.QuizDTO;
 
-@FeignClient(name="quizes",url = "http://localhost:8081")
+@FeignClient(name="quizes",url = "QUIZ_MS")
 public interface QuizClient {
 	@GetMapping("/api/quiz/getById/{id}")
 	QuizDTO getQuizById(@PathVariable String id);
